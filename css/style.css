@@ -1,0 +1,64 @@
+@import "variables.css";
+
+/*font-family: 'Open Sans', sans-serif;*/
+
+body{
+  font-family: var(--font-family);
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  background-color: var(--primary-bg);
+  color: var(--primary-color);
+  font-size: var(--font-size);
+}
+
+.btn-red{
+    background-color: #d51e08;
+    color: #fff;
+    border: none;
+}
+
+h5{
+    font-size: 14px;
+}
+
+h3{
+    font-size: 24px;
+}
+
+/* #region Header Top */
+
+header .header-top{
+    background-color: #fff;
+}
+
+header .navbar{
+    background-color: #fff;
+    text-transform: uppercase;
+    padding: 20px 0;
+}
+
+
+
+/* #endregion */
+
+
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+	
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 992px) {
+	
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+	
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+
+}
