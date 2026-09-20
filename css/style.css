@@ -91,6 +91,40 @@ header .header-bottom .carousel-caption .btn-red {
   font-size: 24px;
 }
 
+/* Header Carousel Indicators */
+header .carousel-positioned {
+  position: absolute;
+  right: 0;
+  bottom: -1rem;
+  left: 0;
+  z-index: 15;
+  border: 1px solid red;
+  text-align: center;
+}
+
+header .indicator-styles {
+  display: inline-block;
+  /*
+  position: relative;
+  bottom: -1rem;
+  justify-content: center;
+  list-style: none;
+  background: white;
+  border: 1px solid green;
+  padding: calc(11rem/16) 0;
+  width: auto; */
+}
+
+.carousel-indicators li {
+  box-sizing: content-box;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  width: 10px;
+  height: 10px;
+
+  background-color: #a3a3a3;
+  border-radius: 50%;
+}
 
 
 
