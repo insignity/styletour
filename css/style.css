@@ -2,6 +2,8 @@
 
 /*font-family: 'Open Sans', sans-serif;*/
 
+/* #region UIKit */
+
 body {
   font-family: var(--font-family);
   font-optical-sizing: auto;
@@ -26,6 +28,8 @@ h5 {
 h3 {
   font-size: 24px;
 }
+
+/* #endregion */
 
 /* #region Header Top */
 
@@ -104,18 +108,25 @@ header .carousel-positioned {
 
 header .indicator-styles {
   display: inline-block;
-  /*
-  position: relative;
   bottom: -1rem;
   justify-content: center;
   list-style: none;
   background: white;
   border: 1px solid green;
-  padding: calc(11rem/16) 0;
-  width: auto; */
+  border-radius: 2px;
+  padding: calc(11rem/16) calc(26rem/16);
+  width: auto;
+  /*
+  position: relative;
+  */
 }
 
-.carousel-indicators li {
+header .carousel-indicators {
+  position: relative;
+  margin: 0;
+}
+
+header .carousel-indicators li {
   box-sizing: content-box;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
@@ -124,8 +135,13 @@ header .indicator-styles {
 
   background-color: #a3a3a3;
   border-radius: 50%;
+  margin-right: calc(20rem/16);
+  border: none;
 }
 
+header .carousel-indicators li:last-of-type {
+  margin-right: 0;
+}
 
 
 
