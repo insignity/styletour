@@ -143,6 +143,30 @@ header .carousel-indicators li:last-of-type {
   margin-right: 0;
 }
 
+header .header-bottom nav {
+  position: absolute;
+  z-index: 2;
+  top: 32px;
+  justify-self: center;
+  padding: 27px 31px;
+}
+
+header .header-bottom .bg-light {
+  background-color: black !important;
+}
+
+header .header-bottom .nav-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+header .header-bottom .navbar-light .navbar-nav .nav-link {
+  color: white;
+  font-size: 16px ;
+}
+
+
 
 
 
