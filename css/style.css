@@ -29,7 +29,24 @@ h3 {
   font-size: 24px;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: black;
+}
+
 /* #endregion */
+
+/* ******************* */
+/* #region header*/
+
+header {
+  border-bottom: var(--border);
+}
 
 /* #region Header Top */
 
@@ -71,6 +88,60 @@ header .header-top .navbar-light .btn-red img {
 /* #endregion */
 
 /* #region Header Bottom */
+
+/* #region header bottom nav */
+header .header-bottom nav {
+  position: absolute;
+  z-index: 2;
+  top: 32px;
+  left: 0;
+  right: 0;
+  max-width: 1110px;
+  margin: 0 auto;
+  padding: 1rem 3rem;
+}
+
+header .header-bottom .bg-light {
+  background-color: black !important;
+}
+
+header .header-bottom .nav-logo {
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+}
+
+header .header-bottom .nav-item {
+  display: flex;
+  align-items: center;
+}
+
+header .header-bottom .navbar-light .navbar-nav .nav-link {
+  color: white;
+  font-size: .9rem;
+  margin-left: .5rem;
+}
+
+header .header-bottom .navbar-light .navbar-nav .nav-link:hover {
+  color: #d51e08;
+}
+
+header .header-bottom .navbar-light .navbar-nav .logo-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+header nav .form-inline .form-control {
+  height: calc(1.5em + .75rem + 10px);
+}
+
+header nav .form-inline .input-group-text {
+  background-color: white;
+}
+
+/* #endregion */
+
+/* #region carousel text */
 header .header-bottom .carousel-caption {
   bottom: initial;
   top: 16.8rem;
@@ -95,14 +166,15 @@ header .header-bottom .carousel-caption .btn-red {
   font-size: 24px;
 }
 
-/* Header Carousel Indicators */
+/* #endregion */
+
+/* #region Header Carousel Indicators */
 header .carousel-positioned {
   position: absolute;
   right: 0;
   bottom: -1rem;
   left: 0;
   z-index: 15;
-  border: 1px solid red;
   text-align: center;
 }
 
@@ -112,8 +184,8 @@ header .indicator-styles {
   justify-content: center;
   list-style: none;
   background: white;
-  border: 1px solid green;
-  border-radius: 2px;
+  border: 1px solid #a3a3a3;
+  border-radius: 4px;
   padding: calc(11rem/16) calc(26rem/16);
   width: auto;
   /*
@@ -143,34 +215,66 @@ header .carousel-indicators li:last-of-type {
   margin-right: 0;
 }
 
-header .header-bottom nav {
-  position: absolute;
-  z-index: 2;
-  top: 32px;
-  justify-self: center;
-  padding: 27px 31px;
+/* #endregion */
+
+/* #endregion */
+
+header .promo-text {
+  background-color: white;
+  padding: 40px 0;
+  text-align: center;
 }
 
-header .header-bottom .bg-light {
-  background-color: black !important;
+header .promo-text h2 {
+  font-size: 1.3rem;
+  font-weight: 500;
 }
 
-header .header-bottom .nav-logo {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* #endregion header */
+
+/* #region aside */
+.container aside {
+  padding-top: 2rem;
+  border-right: var(--border);
+  padding-right: 0;
 }
 
-header .header-bottom .navbar-light .navbar-nav .nav-link {
-  color: white;
-  font-size: 16px ;
+aside h2 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
+aside .show-more a {
+  color: darkcyan;
+}
 
+aside .popular-categories {
+  padding-bottom: 2rem;
+  border-bottom: var(--border);
+}
 
+aside .popular-brands {
+  padding: 2rem 0;
+  border-bottom: var(--border);
+}
 
 
 /* #endregion */
+
+
+/* #region main */
+
+/* #region good */
+
+/* #endregion */
+
+/* #endregion */
+
+
+/* #region footer */
+/* #endregion */
+
 
 /* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px) {}
