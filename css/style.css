@@ -1,24 +1,22 @@
 @import "variables.css";
 
-/*font-family: 'Open Sans', sans-serif;*/
-
-/* #region UIKit */
+/* #region Base & reusable elements */
 
 body {
-  font-family: var(--font-family);
+  font-family: var(--font-main);
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
-  background-color: var(--primary-bg);
-  color: var(--primary-color);
-  font-size: var(--font-size);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-size: var(--font-size-base);
 }
 
-.btn-red {
-  background-color: #d51e08;
+/* Main call-to-action button (cart, hero "Shop" buttons) */
+.btn-accent {
+  background-color: var(--color-accent);
   color: #fff;
   border: none;
-
 }
 
 h5 {
@@ -36,131 +34,86 @@ ul {
 }
 
 a {
-  color: black;
+  color: var(--color-text);
 }
 
 /* #endregion */
 
 /* ******************* */
-/* #region header*/
+/* #region Header */
 
 header {
-  border-bottom: var(--border);
+  border-bottom: var(--border-section);
 }
 
-/* #region Header Top */
+/* #region Topbar (support, language, currency, login, cart) */
 
-header .header-top {
+.topbar {
   background-color: #fff;
 }
 
-header .header-top .navbar {
+.topbar .navbar {
   background-color: #fff;
   text-transform: uppercase;
-  padding: 20px 0;
+  padding: 20px;
 }
 
-header .header-top .navbar-light .navbar-nav .nav-link {
-  color: black;
+.topbar .navbar-light .navbar-nav .nav-link {
+  color: var(--color-text);
 }
 
-header .header-top .flag {
+.lang-flag {
   padding: 0 .5rem;
   position: relative;
   top: -1px;
 }
 
-
-header .header-top .navbar-light .navbar-nav .btn-cart {
-  margin-left: 1rem;
-}
-
-header .header-top .navbar-light .btn-red {
+.topbar__cart .btn-accent {
   width: 12rem;
   padding: .6rem 0;
   text-transform: uppercase;
 }
 
-header .header-top .navbar-light .btn-red img {
+.topbar__cart-icon img {
   margin-right: .8rem;
 }
 
 /* #endregion */
 
-/* #region Header Bottom */
+/* #region Hero (carousel + main nav on top of it) */
 
-/* #region header bottom nav */
-header .header-bottom nav {
-  position: absolute;
-  z-index: 2;
-  top: 32px;
-  left: 0;
-  right: 0;
-  max-width: 1110px;
-  margin: 0 auto;
-  padding: 1rem 3rem;
+/* #region Hero carousel slides */
+
+.hero .carousel {
+  position: relative;
 }
 
-header .header-bottom .bg-light {
-  background-color: black !important;
+.hero .carousel-item {
+  height: 715px;
 }
 
-header .header-bottom .nav-logo {
-  position: absolute;
-  top: 0;
-  left: 1.5rem;
+.hero .carousel-item img {
+  object-fit: cover;
 }
 
-header .header-bottom .nav-item {
-  display: flex;
-  align-items: center;
-}
-
-header .header-bottom .navbar-light .navbar-nav .nav-link {
-  color: white;
-  font-size: .9rem;
-  margin-left: .5rem;
-}
-
-header .header-bottom .navbar-light .navbar-nav .nav-link:hover {
-  color: #d51e08;
-}
-
-header .header-bottom .navbar-light .navbar-nav .logo-text {
-  font-size: 1.2rem;
-  font-weight: bold;
-}
-
-header nav .form-inline .form-control {
-  height: calc(1.5em + .75rem + 10px);
-}
-
-header nav .form-inline .input-group-text {
-  background-color: white;
-}
-
-/* #endregion */
-
-/* #region carousel text */
-header .header-bottom .carousel-caption {
+.hero .carousel-caption {
   bottom: initial;
-  top: 16.8rem;
+  top: 268px;
   left: 0;
 }
 
-header .header-bottom .carousel-caption h5 {
+.hero .carousel-caption h5 {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
-header .header-bottom .carousel-caption p {
+.hero .carousel-caption p {
   font-size: 2rem;
   margin-bottom: 2rem;
 }
 
-
-header .header-bottom .carousel-caption .btn-red {
+.hero .carousel-caption .btn-accent {
   width: 20.6rem;
   padding: 1.2rem 0;
   font-size: 24px;
@@ -168,8 +121,10 @@ header .header-bottom .carousel-caption .btn-red {
 
 /* #endregion */
 
-/* #region Header Carousel Indicators */
-header .carousel-positioned {
+/* #region Hero carousel indicators (white pill with dots, overlapping the bottom edge) */
+
+/* Full-width wrapper that centers the pill */
+.hero__indicators-wrap {
   position: absolute;
   right: 0;
   bottom: -1rem;
@@ -178,112 +133,166 @@ header .carousel-positioned {
   text-align: center;
 }
 
-header .indicator-styles {
+/* The white pill itself */
+.hero__indicators {
   display: inline-block;
-  bottom: -1rem;
-  justify-content: center;
-  list-style: none;
   background: white;
-  border: 1px solid #a3a3a3;
+  border: 1px solid var(--color-muted);
   border-radius: 4px;
   padding: calc(11rem/16) calc(26rem/16);
-  width: auto;
-  /*
-  position: relative;
-  */
 }
 
-header .carousel-indicators {
+.hero .carousel-indicators {
   position: relative;
   margin: 0;
 }
 
-header .carousel-indicators li {
+.hero .carousel-indicators li {
   box-sizing: content-box;
   -ms-flex: 0 1 auto;
   flex: 0 1 auto;
   width: 10px;
   height: 10px;
 
-  background-color: #a3a3a3;
+  background-color: var(--color-muted);
   border-radius: 50%;
   margin-right: calc(20rem/16);
   border: none;
 }
 
-header .carousel-indicators li:last-of-type {
+.hero .carousel-indicators li:last-of-type {
   margin-right: 0;
 }
 
 /* #endregion */
 
+/* #region Main nav (logo, categories, search) */
+
+.hero .main-nav {
+  position: absolute;
+  z-index: 2;
+  top: 32px;
+  width: 100%;
+  padding: 1rem 3rem;
+  background: transparent !important;
+}
+
+.main-nav__bar {
+  background: black;
+}
+
+.main-nav__logo {
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+}
+
+.main-nav .nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.hero .main-nav .navbar-nav .nav-link {
+  color: white;
+  font-size: .9rem;
+  margin-left: .5rem;
+}
+
+.hero .main-nav .navbar-nav .nav-link:hover {
+  color: var(--color-accent);
+}
+
+.hero .main-nav .navbar-nav .main-nav__brand {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.main-nav__search .form-control {
+  height: calc(1.5em + .75rem + 10px);
+}
+
+.main-nav__search .input-group-text {
+  background-color: white;
+}
+
 /* #endregion */
 
-header .promo-text {
+/* #endregion Hero */
+
+/* #region Promo strip */
+
+.promo {
   background-color: white;
   padding: 40px 0;
   text-align: center;
 }
 
-header .promo-text h2 {
+.promo__title {
   font-size: 1.3rem;
   font-weight: 500;
 }
 
-/* #endregion header */
+/* #endregion */
 
-/* #region aside */
-.container aside {
+/* #endregion Header */
+
+/* #region Sidebar (popular categories, popular brands) */
+
+.sidebar {
   padding-top: 2rem;
-  border-right: var(--border);
+  border-right: var(--border-section);
   padding-right: 0;
 }
 
-aside h2 {
+.sidebar__block {
+  padding: 2rem 0;
+  border-bottom: var(--border-section);
+}
+
+.sidebar__block:first-child {
+  padding-top: 0;
+}
+
+.sidebar__title {
   font-size: 1rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
-aside .show-more a {
-  color: darkcyan;
+.sidebar-list__more a {
+  color: var(--color-link-more);
 }
 
-aside .popular-categories {
-  padding-bottom: 2rem;
-  border-bottom: var(--border);
-}
-
-aside .popular-brands {
-  padding: 2rem 0;
-  border-bottom: var(--border);
-}
-
-
 /* #endregion */
 
+/* #region Main content */
 
-/* #region main */
-
-/* #region good */
-
+/* #region Product cards */
+/* TODO */
 /* #endregion */
 
 /* #endregion */
 
-
-/* #region footer */
+/* #region Footer */
+/* TODO */
 /* #endregion */
 
+/* #region Responsive */
 
-/* Large Devices, Wide Screens */
+/* Large devices, wide screens */
 @media only screen and (max-width : 1200px) {}
 
-/* Medium Devices, Desktops */
+/* Medium devices, desktops */
 @media only screen and (max-width : 992px) {}
 
-/* Small Devices, Tablets */
+/* Small devices, tablets */
 @media only screen and (max-width : 768px) {}
 
-/* Extra Small Devices, Phones */
-@media only screen and (max-width : 480px) {}
+/* Extra small devices, phones */
+@media only screen and (max-width : 480px) {
+  .topbar__cart .btn-accent {
+    width: 100%;
+  }
+}
+
+/* #endregion */
