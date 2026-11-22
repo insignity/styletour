@@ -1,0 +1,14 @@
+# Packages (re-created with `npm install`)
+node_modules/
+
+# Build output
+dist/
+
+# Logs
+*.log
+
+# OS and editor files
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json

@@ -3,10 +3,7 @@
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
     <title>Styletour</title>
 
@@ -35,179 +32,147 @@
     <header>
       <!-- ===== TOPBAR ===== -->
       <section class="topbar">
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand" href="#"></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#topbarNav"
-            aria-controls="topbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+        <div class="container px-0 py-2">
+          <nav class="topbar__navbar navbar navbar-expand-lg navbar-light">
+            <!-- <a class="navbar-brand" href="#"></a> -->
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#topbarNav"
+              aria-controls="topbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-          <div class="collapse navbar-collapse" id="topbarNav">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#"
-                  >Support <span class="sr-only">(current)</span></a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Free shipping over $50</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Articles</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  <img src="./img/flag.jpg" alt="" class="lang-flag" />
-                  English
-                </a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Currency: USD
-                </a>
-                <div class="dropdown-menu">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-              </li>
-            </ul>
-            <ul class="navbar-nav my-lg-0">
-              <li class="nav-item">
-                <a class="nav-link" href="#">Login</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">SignUp</a>
-              </li>
-              <li class="nav-item topbar__cart">
-                <button type="button" class="btn btn-accent">
-                  <span class="topbar__cart-icon">
-                    <img src="./img/cart.png" alt="" />
-                  </span>
-                  Shopping Cart
-                </button>
-              </li>
-            </ul>
-          </div>
-        </nav>
+            <div class="collapse navbar-collapse" id="topbarNav">
+              <ul class="navbar-nav mr-auto">
+                <li class="topbar__item active">
+                  <a class="topbar__link" href="#">
+                    Support
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="topbar__item">
+                  <a class="topbar__link" href="#">Free shipping over $50</a>
+                </li>
+                <li class="topbar__item">
+                  <a class="topbar__link" href="#">Articles</a>
+                </li>
+                <li class="topbar__item dropdown">
+                  <a
+                    class="topbar__link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    <img src="./img/flag.jpg" alt="" class="topbar__flag" />
+                    English
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="topbar__item dropdown">
+                  <a
+                    class="topbar__link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Currency: USD
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+              </ul>
+              <ul class="navbar-nav my-lg-0">
+                <li class="topbar__item">
+                  <a class="topbar__link" href="#">Login</a>
+                </li>
+                <li class="topbar__item mr-3">
+                  <a class="topbar__link" href="#">SignUp</a>
+                </li>
+                <li class="topbar__cart">
+                  <button type="button" class="btn btn-accent topbar__cart-btn">
+                    <span class="topbar__cart-icon">
+                      <img class="topbar__cart-img" src="./img/cart.png" alt="" />
+                    </span>
+                    Shopping Cart
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
       </section>
       <!-- ===== HERO: carousel + main nav ===== -->
       <section class="hero">
         <div class="container-fluid">
           <div class="row">
             <div class="col px-0">
-              <!-- data-interval is very high, so autoplay is effectively off -->
-              <div
-                id="heroCarousel"
-                class="carousel slide"
-                data-ride="carousel"
-                data-interval="1000000"
-              >
+              <!-- data-interval: pause between slides in ms (5000 = 5s) -->
+              <div id="heroCarousel" class="carousel slide" data-ride="carousel" data-interval="5000">
                 <div class="hero__indicators-wrap">
                   <div class="hero__indicators">
-                    <ol class="carousel-indicators">
-                      <li
-                        data-target="#heroCarousel"
-                        data-slide-to="0"
-                        class="active"
-                      ></li>
-                      <li
-                        data-target="#heroCarousel"
-                        data-slide-to="1"
-                      ></li>
-                      <li
-                        data-target="#heroCarousel"
-                        data-slide-to="2"
-                      ></li>
-                      <li
-                        data-target="#heroCarousel"
-                        data-slide-to="3"
-                      ></li>
+                    <ol class="carousel-indicators hero__dots">
+                      <li data-target="#heroCarousel" data-slide-to="0" class="hero__dot active"></li>
+                      <li data-target="#heroCarousel" data-slide-to="1" class="hero__dot"></li>
+                      <li data-target="#heroCarousel" data-slide-to="2" class="hero__dot"></li>
+                      <li data-target="#heroCarousel" data-slide-to="3" class="hero__dot"></li>
                     </ol>
                   </div>
                 </div>
 
                 <div class="carousel-inner">
-                  <div class="carousel-item active">
-                    <img
-                      src="./img/slider.jpg"
-                      class="d-block w-100"
-                      alt="..."
-                    />
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Women's Apparel</h5>
-                      <p>T-Shirts, Dress Shirts, Tanks, Pants and More...</p>
-                      <button class="btn-accent">Shop Women’s Apparel</button>
+                  <div class="carousel-item hero__slide active">
+                    <img src="./img/slider.jpg" class="d-block w-100 h-100 hero__slide-img" alt="..." />
+                    <div class="carousel-caption d-none d-md-block hero__caption">
+                      <h5 class="hero__title">Women's Apparel</h5>
+                      <p class="hero__text">T-Shirts, Dress Shirts, Tanks, Pants and More...</p>
+                      <button class="btn-accent hero__button">Shop Women’s Apparels</button>
                     </div>
                   </div>
-                  <div class="carousel-item">
-                    <img
-                      src="./img/slider.jpg"
-                      class="d-block w-100"
-                      alt="..."
-                    />
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Women's Apparel</h5>
-                      <p>T-Shirts, Dress Shirts, Tanks, Pants and More...</p>
-                      <button class="btn-accent">Shop Women’s Apparel</button>
+                  <div class="carousel-item hero__slide">
+                    <img src="./img/slider.jpg" class="d-block w-100 h-100 hero__slide-img" alt="..." />
+                    <div class="carousel-caption d-none d-md-block hero__caption">
+                      <h5 class="hero__title">Women's Apparel</h5>
+                      <p class="hero__text">T-Shirts, Dress Shirts, Tanks, Pants and More...</p>
+                      <button class="btn-accent hero__button">Shop Women’s Apparel</button>
                     </div>
                   </div>
-                  <div class="carousel-item">
-                    <img
-                      src="./img/slider.jpg"
-                      class="d-block w-100"
-                      alt="..."
-                    />
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Women's Apparel</h5>
-                      <p>T-Shirts, Dress Shirts, Tanks, Pants and More...</p>
-                      <button class="btn-accent">Shop Women’s Apparel</button>
+                  <div class="carousel-item hero__slide">
+                    <img src="./img/slider.jpg" class="d-block w-100 h-100 hero__slide-img" alt="..." />
+                    <div class="carousel-caption d-none d-md-block hero__caption">
+                      <h5 class="hero__title">Women's Apparel</h5>
+                      <p class="hero__text">T-Shirts, Dress Shirts, Tanks, Pants and More...</p>
+                      <button class="btn-accent hero__button">Shop Women’s Apparel</button>
                     </div>
                   </div>
-                  <div class="carousel-item">
-                    <img
-                      src="./img/slider.jpg"
-                      class="d-block w-100"
-                      alt="..."
-                    />
-                    <div class="carousel-caption d-none d-md-block">
-                      <h5>Women's Apparel</h5>
-                      <p>T-Shirts, Dress Shirts, Tanks, Pants and More...</p>
-                      <button class="btn-accent">Shop Women’s Apparel</button>
+                  <div class="carousel-item hero__slide">
+                    <img src="./img/slider.jpg" class="d-block w-100 h-100 hero__slide-img" alt="..." />
+                    <div class="carousel-caption d-none d-md-block hero__caption">
+                      <h5 class="hero__title">Women's Apparel</h5>
+                      <p class="hero__text">T-Shirts, Dress Shirts, Tanks, Pants and More...</p>
+                      <button class="btn-accent hero__button">Shop Women’s Apparel</button>
                     </div>
                   </div>
                 </div>
-
-                <!-- Main nav sits on top of the carousel -->
-                <nav class="main-nav navbar navbar-expand-lg navbar-light bg-light">
+                <!-- MAIN NAV -->
+                <nav class="main-nav navbar navbar-expand-lg navbar-light">
                   <div class="container main-nav__bar">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand main-nav__brand" href="#">
                       <img class="main-nav__logo" src="./img/logo.png" alt="logo" />
                       <span>Styletour</span>
                     </a>
@@ -220,46 +185,43 @@
                       aria-expanded="false"
                       aria-label="Toggle navigation"
                     >
-                      <span class="navbar-toggler-icon"></span>
+                      <span class="navbar-toggler-icon main-nav__toggler-icon"></span>
                     </button>
 
                     <div class="collapse navbar-collapse" id="mainNav">
                       <ul class="navbar-nav mr-auto">
-                        <li class="nav-item">
-                          <a class="nav-link main-nav__brand" href="#">STYLETOUR</a>
+                        <li class="main-nav__item">
+                          <a class="main-nav__link main-nav__link--brand" href="#">STYLETOUR</a>
                         </li>
-                        <li class="nav-item active">
-                          <a class="nav-link" href="#"
-                            >Shop<span class="sr-only">(current)</span></a
-                          >
+                        <li class="main-nav__item active">
+                          <a class="main-nav__link" href="#">
+                            Shop
+                            <span class="sr-only">(current)</span>
+                          </a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Men</a>
+                        <li class="main-nav__item">
+                          <a class="main-nav__link" href="#">Men</a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Women</a>
+                        <li class="main-nav__item">
+                          <a class="main-nav__link" href="#">Women</a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Kids</a>
+                        <li class="main-nav__item">
+                          <a class="main-nav__link" href="#">Kids</a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Accessories</a>
+                        <li class="main-nav__item">
+                          <a class="main-nav__link" href="#">Accessories</a>
                         </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="#">Sale</a>
+                        <li class="main-nav__item">
+                          <a class="main-nav__link" href="#">Sale</a>
                         </li>
                       </ul>
                       <form class="main-nav__search form-inline my-2 my-lg-0">
                         <div class="input-group">
-                          <input
-                            type="text"
-                            class="form-control"
-                            placeholder="Search"
-                          />
+                          <input type="text" class="form-control main-nav__search-input" placeholder="Search" />
                           <div class="input-group-append">
-                            <span class="input-group-text"
-                              ><a href="">
-                                <img src="./img/search.png" alt="search" />
+                            <span class="input-group-text main-nav__search-btn">
+                              <a href="">
+                                <img class="main-nav__search-icon" src="./img/search.png" alt="search" />
                               </a>
                             </span>
                           </div>
@@ -276,167 +238,397 @@
       <!-- ===== PROMO STRIP ===== -->
       <section class="promo">
         <div class="container">
-          <h2 class="promo__title">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint,
-            placeat.
-          </h2>
+          <h2 class="promo__title">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sint, placeat.</h2>
         </div>
       </section>
     </header>
+    <!-- Main/Aside -->
     <div class="container">
       <div class="row">
         <!-- ===== PRODUCTS ===== -->
-        <main class="col-9">
-          <h2>Content</h2>
-          <div class="row p-3">
+        <main class="col-xl-9 pt-5">
+          <h2 class="main-title mb-5">Items on Demand</h2>
+          <div class="row row-cols-md-3 text-center mb-5">
+            <div class="col md-mb-4">
+              <div class="card product__card pb-4">
+                <img src="./img/goods1.jpg" class="product__img" alt="Goods 1" />
+                <h5 class="product__title">Cream jane jeans dress</h5>
+                <p class="product__text">Signature NYX cosmetics</p>
+                <div class="product__card-bottom">
+                  <span class="product__price">Price: $10.00</span>
+                  <button class="product__btn">Add to cart</button>
+                </div>
+              </div>
+            </div>
+            <div class="col md-mb-4">
+              <div class="card product__card pb-4">
+                <img src="./img/goods2.jpg" class="product__img" alt="Goods 1" />
+                <h5 class="product__title">Cream sissi tunic</h5>
+                <p class="product__text">Lightweight with just a hint of sheer color</p>
+                <div class="product__card-bottom">
+                  <span class="product__price mb-3">Price: $20.00</span>
+                  <button class="product__btn">Add to cart</button>
+                </div>
+              </div>
+            </div>
+            <div class="col md-mb-4">
+              <div class="card product__card pb-4">
+                <img src="./img/goods3.jpg" class="product__img" alt="Goods 1" />
+                <h5 class="product__title">Cream jane jeans dress</h5>
+                <p class="product__text">Lightweight with just a hint of sheer color</p>
+                <div class="product__card-bottom">
+                  <span class="product__price mb-3">Price: $9.00</span>
+                  <button class="product__btn">Add to cart</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h2 class="main-title mb-5">Featured Items</h2>
+          <div class="row row-cols-md-3 text-center mb-5">
+            <div class="col md-mb-4">
+              <div class="card product__card pb-4">
+                <img src="./img/goods4.jpg" class="product__img" alt="Goods 1" />
+                <h5 class="product__title">Cream jane jeans dress</h5>
+                <p class="product__text">Signature NYX cosmetics</p>
+                <div class="product__card-bottom">
+                  <span class="product__price mb-3">Price: $10.00</span>
+                  <button class="product__btn">Add to cart</button>
+                </div>
+              </div>
+            </div>
+            <div class="col md-mb-4">
+              <div class="card product__card pb-4">
+                <img src="./img/goods5.jpg" class="product__img" alt="Goods 1" />
+                <h5 class="product__title">Cream sissi tunic</h5>
+                <p class="product__text">Lightweight with just a hint of sheer color</p>
+                <div class="product__card-bottom">
+                  <span class="product__price mb-3">Price: $20.00</span>
+                  <button class="product__btn">Add to cart</button>
+                </div>
+              </div>
+            </div>
             <div class="col">
-              <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3">
-                <div class="col card product-card">
-                  <div class="row">
-                    <div class="col p-0">
-                      <img src="./img/favorite.png" alt="" class="product-card__fav" />
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col px-0">
-                      <img
-                        src="./img/goods1.jpg"
-                        class="card-img-top"
-                        alt="..."
-                      />
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col px-0">
-                      <p class="card-text">
-                        Lorem, ipsum dolor sit amet consecte
-                      </p>
-                    </div>
-                  </div>
+              <div class="card product__card pb-4">
+                <img src="./img/goods6.jpg" class="product__img" alt="Goods 1" />
+                <h5 class="product__title">Cream jane jeans dress</h5>
+                <p class="product__text">Lightweight with just a hint of sheer color</p>
+                <div class="product__card-bottom">
+                  <span class="product__price">Price: $9.00</span>
+                  <button class="product__btn">Add to cart</button>
                 </div>
-                <div class="col card product-card">
-                  <div class="row">
-                    <div class="col px-0">
-                      <h5 class="card-title mb-0 my-2">Goods 1</h5>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col px-0">
-                      <img src="./src/1.jpg" class="card-img-top" alt="..." />
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col px-0">
-                      <p class="card-text">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Facilis excepturi facere similique maiores id. Ex
-                        quisquam non accusamus quos libero.
-                      </p>
-                    </div>
-                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="row row-cols-md-3 text-center mb-4">
+            <figure class="col md-mb-4">
+              <img class="w-100" src="./img/content-banner1.jpg" alt="" />
+            </figure>
+            <figure class="col md-mb-4">
+              <img class="w-100" src="./img/content-banner2.jpg" alt="" />
+            </figure>
+            <figure class="col md-mb-4">
+              <img class="w-100" src="./img/content-banner3.jpg" alt="" />
+            </figure>
+          </div>
+          <h2 class="main-title mb-5">Latest Arrivals</h2>
+          <div class="row row-cols-md-3 text-center">
+            <div class="col mb-4">
+              <div class="card product__card pb-4">
+                <img src="./img/goods7.jpg" class="product__img" alt="Goods 1" />
+                <h5 class="product__title">Cream jane jeans dress</h5>
+                <p class="product__text">Signature NYX cosmetics</p>
+                <div class="product__card-bottom">
+                  <span class="product__price mb-3">Price: $10.00</span>
+                  <button class="product__btn">Add to cart</button>
                 </div>
-                <div class="col card product-card">
-                  <div class="row">
-                    <div class="col px-0">
-                      <h5 class="card-title mb-0 my-2">Goods 1</h5>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col px-0">
-                      <img src="./src/1.jpg" class="card-img-top" alt="..." />
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col px-0">
-                      <p class="card-text">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Facilis excepturi facere similique maiores id. Ex
-                        quisquam non accusamus quos libero.
-                      </p>
-                    </div>
-                  </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card product__card pb-4">
+                <img src="./img/goods8.jpg" class="product__img" alt="Goods 1" />
+                <h5 class="product__title">Cream sissi tunic</h5>
+                <p class="product__text">Lightweight with just a hint of sheer color</p>
+                <div class="product__card-bottom">
+                  <span class="product__price mb-3">Price: $20.00</span>
+                  <button class="product__btn">Add to cart</button>
                 </div>
-                <div class="col card product-card">
-                  <div class="row">
-                    <div class="col px-0">
-                      <h5 class="card-title mb-0 my-2">Goods 1</h5>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col px-0">
-                      <img src="./src/1.jpg" class="card-img-top" alt="..." />
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col px-0">
-                      <p class="card-text">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Facilis excepturi facere similique maiores id. Ex
-                        quisquam non accusamus quos libero.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col card product-card">
-                  <div class="row">
-                    <div class="col px-0">
-                      <h5 class="card-title mb-0 my-2">Goods 1</h5>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col px-0">
-                      <img src="./src/1.jpg" class="card-img-top" alt="..." />
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col px-0">
-                      <p class="card-text">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Facilis excepturi facere similique maiores id. Ex
-                        quisquam non accusamus quos libero.
-                      </p>
-                    </div>
-                  </div>
+              </div>
+            </div>
+            <div class="col mb-4">
+              <div class="card product__card pb-4">
+                <img src="./img/goods9.jpg" class="product__img" alt="Goods 1" />
+                <h5 class="product__title">Cream jane jeans dress</h5>
+                <p class="product__text">Lightweight with just a hint of sheer color</p>
+                <div class="product__card-bottom">
+                  <span class="product__price mb-3">Price: $9.00</span>
+                  <button class="product__btn">Add to cart</button>
                 </div>
               </div>
             </div>
           </div>
         </main>
         <!-- ===== SIDEBAR ===== -->
-        <aside class="col-3 sidebar">
-          <section class="sidebar__block">
-            <h2 class="sidebar__title">Popular Categories</h2>
-            <ul class="sidebar-list">
-              <li><a href="">Performance Collection</a></li>
-              <li><a href="">Pants</a></li>
-              <li><a href="">Woven Shirts</a></li>
-              <li><a href="">Earth-Friendly Apparel</a></li>
-              <li><a href="">Sweatshirts</a></li>
-              <li><a href="">Infants</a></li>
-              <li><a href="">Shorts</a></li>
-              <li><a href="">Adult Essentials</a></li>
-              <li class="sidebar-list__more"><a href="">Show more</a></li>
-            </ul>
-          </section>
-          <section class="sidebar__block">
-            <h2 class="sidebar__title">Popular Brands</h2>
-            <ul class="sidebar-list">
-              <li><a href="">Ashworth</a></li>
-              <li><a href="">Rabbit Skins</a></li>
-              <li><a href="">Izod</a></li>
-              <li><a href="">LAT</a></li>
-              <li><a href="">Authentic Pigment</a></li>
-              <li><a href="">Canvas</a></li>
-              <li><a href="">Applese & Oranges</a></li>
-              <li><a href="">OccuNomix</a></li>
-              <li class="sidebar-list__more"><a href="">Show more</a></li>
-            </ul>
-          </section>
+        <aside class="col-xl-3 layout__sidebar sidebar">
+          <div class="row">
+            <section
+              class="aside__slider sidebar__block sidebar__block--bordered col-xl-12 col-lg-4 col-md-6 col-sm-12"
+            >
+              <h2 class="sidebar__block-title">Popular Categories</h2>
+              <ul class="sidebar__block-list">
+                <li class="sidebar__block-item">
+                  <a class="sidebar__block-link" href="">Performance Collection</a>
+                </li>
+                <li class="sidebar__block-item">
+                  <a class="sidebar__block-link" href="">Pants</a>
+                </li>
+                <li class="sidebar__block-item">
+                  <a class="sidebar__block-link" href="">Woven Shirts</a>
+                </li>
+                <li class="sidebar__block-item">
+                  <a class="sidebar__block-link" href="">Earth-Friendly Apparel</a>
+                </li>
+                <li class="sidebar__block-item">
+                  <a class="sidebar__block-link" href="">Sweatshirts</a>
+                </li>
+                <li class="sidebar__block-item">
+                  <a class="sidebar__block-link" href="">Infants</a>
+                </li>
+                <li class="sidebar__block-item">
+                  <a class="sidebar__block-link" href="">Shorts</a>
+                </li>
+                <li class="sidebar__block-item">
+                  <a class="sidebar__block-link" href="">Adult Essentials</a>
+                </li>
+                <li class="sidebar__block-item">
+                  <a class="sidebar__block-link sidebar__block-link--more" href="">Show more</a>
+                </li>
+              </ul>
+            </section>
+            <section class="sidebar__block sidebar__block--bordered col-xl-12 col-lg-4 col-md-6 col-sm-12">
+              <h2 class="sidebar__block-title">Popular Brands</h2>
+              <ul class="sidebar__list">
+                <li class="sidebar__block-item">
+                  <a class="sidebar__block-link" href="">Ashworth</a>
+                </li>
+                <li class="sidebar__block-item">
+                  <a class="sidebar__block-link" href="">Rabbit Skins</a>
+                </li>
+                <li class="sidebar__block-item">
+                  <a class="sidebar__block-link" href="">Izod</a>
+                </li>
+                <li class="sidebar__block-item">
+                  <a class="sidebar__block-link" href="">LAT</a>
+                </li>
+                <li class="sidebar__block-item">
+                  <a class="sidebar__block-link" href="">Authentic Pigment</a>
+                </li>
+                <li class="sidebar__block-item">
+                  <a class="sidebar__block-link" href="">Canvas</a>
+                </li>
+                <li class="sidebar__block-item">
+                  <a class="sidebar__block-link" href="">Applese & Oranges</a>
+                </li>
+                <li class="sidebar__block-item">
+                  <a class="sidebar__block-link" href="">OccuNomix</a>
+                </li>
+                <li class="sidebar__block-item">
+                  <a class="sidebar__block-link sidebar__block-link--more" href="">Show more</a>
+                </li>
+              </ul>
+            </section>
+          </div>
+          <div class="row">
+            <section class="sidebar__block col-xl-12 col-md-6">
+              <div class="sidebar__slider">
+                <figure class="sidebar__slider-img">
+                  <img
+                    class="img-fluid w-100 h-100"
+                    src="./img/slide-sidebar1.jpg"
+                    alt="fashion colors for women image"
+                  />
+                </figure>
+                <h4 class="sidebar__slider-title">Fashion Colors For Women</h4>
+                <p class="sidebar__slider-text">
+                  Make every category of your webstore look special by setting different color schemes.
+                </p>
+                <ol class="sidebar__slider-indicators">
+                  <li data-target="#sidebar__slider" data-slide-to="0" class="sidebar__slider-dot active"></li>
+                  <li data-target="#sidebar__slider" data-slide-to="1" class="sidebar__slider-dot"></li>
+                  <li data-target="#sidebar__slider" data-slide-to="2" class="sidebar__slider-dot"></li>
+                </ol>
+              </div>
+            </section>
+            <section class="sidebar__block col-xl-12 col-md-6">
+              <div class="col sidebar__shop-now px-0 pb-4">
+                <figure class="w-100">
+                  <img class="img-fluid w-100" src="./img/banner.jpg" alt="" />
+                </figure>
+                <h3 class="sidebar__shop-now-text">
+                  introducing
+                  <span class="sidebar__shop-now--thick">bombshell</span>
+                  forever
+                </h3>
+                <button type="button" class="btn btn-accent shop-now-btn px-5">Shop now</button>
+              </div>
+            </section>
+          </div>
+          <div class="row">
+            <section class="sidebar__block col">
+              <h3 class="about-store__title">About Store</h3>
+              <p class="about-store__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae incidunt nostrum vero, similique
+                obcaecati magni eveniet maxime enim. Aperiam soluta, possimus nemo dicta.
+              </p>
+              <p class="about-store__text--colored">
+                Qui molestiae doloribus unde culpa nesciunt corporis et quae quod animi saepe reprehenderit ea ex odio
+                blanditiis ut, nulla porro nam est reiciendis.
+              </p>
+            </section>
+          </div>
         </aside>
       </div>
     </div>
-    <!-- ===== FOOTER ===== -->
-    <footer></footer>
+    <footer>
+      <section class="subscribe">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="subscribe__text col-4">
+              <h2>Get Discounts and Free Offers</h2>
+              <h3>Get free coupons, discounts and new arrivals</h3>
+            </div>
+            <form class="col-8">
+              <div class="form-row">
+                <div class="col-5">
+                  <label class="sr-only" for="inlineFormInput">Name</label>
+                  <input type="text" class="form-control" id="inlineFormInput" placeholder="your full name" />
+                </div>
+                <div class="col-5">
+                  <label class="sr-only" for="inlineFormInputGroup">Email</label>
+                  <div class="input-group">
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="inlineFormInputGroup"
+                      placeholder="your email address"
+                    />
+                  </div>
+                </div>
+                <div class="col-2">
+                  <button type="submit" class="btn btn-primary btn-primary__orange">Subscribe</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+      <section class="partners">
+        <div class="container"></div>
+      </section>
+      <section class="footer-nav py-4">
+        <div class="container">
+          <div class="row">
+            <div class="col-4 col-md mb-4 md-mb-0">
+              <h3>Help & info</h3>
+              <ul>
+                <li><a href="">Delivery</a></li>
+                <li><a href="">Returns & Refunds</a></li>
+                <li><a href="">Contact Us</a></li>
+                <li><a href="">Track your Order</a></li>
+                <li><a href="">Reglaze Service</a></li>
+                <li><a href="">Lens Price Comparison</a></li>
+                <li><a href="">A - Z Brands</a></li>
+                <li><a href="">FAQ's</a></li>
+              </ul>
+            </div>
+            <div class="col-4 col-md mb-4 md-mb-0">
+              <h3>Brands we sell</h3>
+              <ul>
+                <li><a href="">Noosa Amsterdam</a></li>
+                <li><a href="">Cream Clothing</a></li>
+                <li><a href="">Taschendieb</a></li>
+                <li><a href="">Hermes paris</a></li>
+                <li><a href="">D&G</a></li>
+              </ul>
+            </div>
+            <div class="col-4 col-md mb-4 md-mb-0">
+              <h3>Care & advice</h3>
+              <ul>
+                <li><a href="">Prescription information</a></li>
+                <li><a href="">Lenses & Coatings</a></li>
+                <li><a href="">PD Measurement</a></li>
+                <li><a href="">Style Advice</a></li>
+                <li><a href="">Size Guide</a></li>
+                <li><a href="">Shopping Guide</a></li>
+              </ul>
+            </div>
+            <div class="col-4 col-md">
+              <h3>Company</h3>
+              <ul>
+                <li><a href="">About us</a></li>
+                <li><a href="">Our Store</a></li>
+                <li><a href="">Terms & Conditions</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Cookies</a></li>
+                <li><a href="">Find us</a></li>
+              </ul>
+            </div>
+            <div class="col-4 col-md">
+              <h3>Follow us</h3>
+              <ul>
+                <li>
+                  <a href="">
+                    <span><img src="./img/fb.jpg" alt="" /></span>
+                  </a>
+                  <a href="">
+                    <span><img src="./img/tw.jpg" alt="" /></span>
+                  </a>
+                  <a href="">
+                    <span><img src="./img/fl.jpg" alt="" /></span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="rights py-4">
+        <div class="container">
+          <div class="row">
+            <div class="col rights__text">
+              <p>@ 2026 Fashion Store. All Rights Reserved.</p>
+            </div>
+            <div class="col rights__pay">
+              <ul class="d-flex">
+                <li>
+                  <span><img src="./img/pay1.jpg" alt="" /></span>
+                </li>
+                <li>
+                  <span><img src="./img/pay2.jpg" alt="" /></span>
+                </li>
+                <li>
+                  <span><img src="./img/pay3.jpg" alt="" /></span>
+                </li>
+                <li>
+                  <span><img src="./img/pay4.jpg" alt="" /></span>
+                </li>
+                <li>
+                  <span><img src="./img/pay5.jpg" alt="" /></span>
+                </li>
+                <li>
+                  <span><img src="./img/pay6.jpg" alt="" /></span>
+                </li>
+                <li>
+                  <span><img src="./img/pay7.jpg" alt="" /></span>
+                </li>
+                <li>
+                  <span><img src="./img/pay8.jpg" alt="" /></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"

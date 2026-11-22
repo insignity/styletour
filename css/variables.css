@@ -1,7 +1,7 @@
 :root {
   /* Typography */
   --font-main: "Open Sans", sans-serif;
-  --font-size-base: 14px;
+  --font-size-base: .875rem; /* 14px */
 
   /* Colors */
   --color-bg: #ececec;
@@ -11,5 +11,5 @@
   --color-link-more: darkcyan;
 
   /* Borders */
-  --border-section: 4px solid rgb(218, 218, 218);
+  --border-section: 3px solid rgb(218, 218, 218);
 }

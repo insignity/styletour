@@ -1,5 +1,15 @@
 @import "variables.css";
 
+/*
+  Naming: BEM (Block__Element--Modifier)
+    .block              — independent section of the page   (.hero, .main-nav, .sidebar)
+    .block__element     — a part that only makes sense inside its block (.hero__title)
+    .block__el--mod     — a variant of an element (.main-nav__link--brand)
+
+  Bootstrap classes (navbar, collapse, row, col-*, carousel-*) stay in the HTML
+  for layout and JS, but we style only through our own BEM classes.
+*/
+
 /* #region Base & reusable elements */
 
 body {
@@ -12,19 +22,12 @@ body {
   font-size: var(--font-size-base);
 }
 
-/* Main call-to-action button (cart, hero "Shop" buttons) */
-.btn-accent {
-  background-color: var(--color-accent);
-  color: #fff;
-  border: none;
-}
-
 h5 {
-  font-size: 14px;
+  font-size: .875rem; /* 14px */
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 1.5rem; /* 24px */
 }
 
 ul {
@@ -37,6 +40,17 @@ a {
   color: var(--color-text);
 }
 
+/* Block: red call-to-action button (cart, hero "Shop" buttons) */
+.btn-accent {
+  background-color: var(--color-accent);
+  color: #fff;
+  border: none;
+}
+
+.btn{
+  font-size: .8rem;
+}
+
 /* #endregion */
 
 /* ******************* */
@@ -46,84 +60,88 @@ header {
   border-bottom: var(--border-section);
 }
 
-/* #region Topbar (support, language, currency, login, cart) */
+  /* #region Topbar */
 
 .topbar {
   background-color: #fff;
 }
 
-.topbar .navbar {
+
+.topbar__navbar {
   background-color: #fff;
   text-transform: uppercase;
-  padding: 20px;
 }
 
-.topbar .navbar-light .navbar-nav .nav-link {
+.topbar__item {
+  display: flex;
+  align-items: center;
+}
+
+.topbar__link {
+  display: block;
+  padding: 0 .5rem;
   color: var(--color-text);
 }
 
-.lang-flag {
-  padding: 0 .5rem;
+.topbar__link:hover {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.topbar__flag {
+  padding: .5 0rem;
   position: relative;
   top: -1px;
 }
 
-.topbar__cart .btn-accent {
+.topbar__cart-btn {
   width: 12rem;
-  padding: .6rem 0;
   text-transform: uppercase;
 }
 
-.topbar__cart-icon img {
-  margin-right: .8rem;
+.topbar__cart-img {
+  margin-right: 1em; /* = button text size (12.8px), grows with it */
 }
 
 /* #endregion */
 
-/* #region Hero (carousel + main nav on top of it) */
+  /* #region Hero (carousel + main-nav) */
 
-/* #region Hero carousel slides */
-
-.hero .carousel {
-  position: relative;
-}
-
-.hero .carousel-item {
+.hero__slide {
   height: 715px;
+  transition-duration: 1.2s; /* slide speed; Bootstrap default is .6s */
 }
 
-.hero .carousel-item img {
+.hero__slide-img {
   object-fit: cover;
 }
 
-.hero .carousel-caption {
+.hero__caption {
   bottom: initial;
-  top: 268px;
-  left: 0;
+  top: 32%;
+  left: -30%;
+  right: 0;
 }
 
-.hero .carousel-caption h5 {
-  font-size: 3rem;
+
+.hero__title {
+  font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
-.hero .carousel-caption p {
-  font-size: 2rem;
+.hero__text {
+  font-size: 1.5rem;
   margin-bottom: 2rem;
 }
 
-.hero .carousel-caption .btn-accent {
-  width: 20.6rem;
-  padding: 1.2rem 0;
-  font-size: 24px;
+.hero__button {
+  width: 18rem;
+  padding: .6rem 0;
+  font-size: 1.3rem; 
 }
 
-/* #endregion */
-
-/* #region Hero carousel indicators (white pill with dots, overlapping the bottom edge) */
-
-/* Full-width wrapper that centers the pill */
+/* Full-width wrapper that centers the indicator pill over the bottom edge */
 .hero__indicators-wrap {
   position: absolute;
   right: 0;
@@ -139,158 +157,442 @@ header {
   background: white;
   border: 1px solid var(--color-muted);
   border-radius: 4px;
-  padding: calc(11rem/16) calc(26rem/16);
+  padding: .6875rem 1.625rem; /* 11px 26px */
 }
 
-.hero .carousel-indicators {
+.hero__dots {
   position: relative;
   margin: 0;
 }
 
-.hero .carousel-indicators li {
+/* Two classes here on purpose: Bootstrap styles dots with
+   `.carousel-indicators li`, which beats a single class */
+.hero__dots .hero__dot {
   box-sizing: content-box;
-  -ms-flex: 0 1 auto;
   flex: 0 1 auto;
   width: 10px;
   height: 10px;
-
   background-color: var(--color-muted);
   border-radius: 50%;
-  margin-right: calc(20rem/16);
+  margin-right: 1.25rem; /* 20px */
   border: none;
 }
 
-.hero .carousel-indicators li:last-of-type {
+.hero__dots .hero__dot:last-child {
   margin-right: 0;
 }
 
 /* #endregion */
 
-/* #region Main nav (logo, categories, search) */
+  /* #region Block: main-nav (logo, categories, search) */
 
-.hero .main-nav {
+.main-nav {
   position: absolute;
-  z-index: 2;
-  top: 32px;
+  z-index: 20; /* above carousel caption (10) and indicators (15) */
+  top: 2%;
   width: 100%;
-  padding: 1rem 3rem;
-  background: transparent !important;
 }
 
 .main-nav__bar {
   background: black;
 }
 
-.main-nav__logo {
-  position: absolute;
-  top: 0;
-  left: 1.5rem;
+.main-nav__brand {
+  position: relative;
 }
 
-.main-nav .nav-item {
+/* flag logo */
+.main-nav__logo {
+  position: absolute;
+  width: 100%;
+  top: -10px;
+  z-index: 0;
+}
+
+/* Bootstrap's dark icon is invisible on the black bar — make it white */
+.main-nav__toggler-icon {
+  filter: brightness(0) invert(1);
+}
+
+.main-nav__item {
   display: flex;
   align-items: center;
 }
 
-.hero .main-nav .navbar-nav .nav-link {
+.main-nav__link {
+  display: block;
   color: white;
-  font-size: .9rem;
+  font-size: .8rem;
   margin-left: .5rem;
+  padding: 1rem;
 }
 
-.hero .main-nav .navbar-nav .nav-link:hover {
+.main-nav__link:hover {
   color: var(--color-accent);
+  text-decoration: none;
 }
 
-.hero .main-nav .navbar-nav .main-nav__brand {
+.main-nav__link--brand {
   font-size: 1.2rem;
   font-weight: bold;
 }
 
-.main-nav__search .form-control {
-  height: calc(1.5em + .75rem + 10px);
+
+.main-nav__search-input {
+  height: calc(1.5em + .75rem);
+  font-size: .6875rem; /* 11px */
+  color: #333;
 }
 
-.main-nav__search .input-group-text {
+.main-nav__search-btn {
   background-color: white;
+  padding: 0;
+}
+
+.main-nav__search-icon {
+  height: 14px;
+  width: 14px;
+  margin: 0 .3125em; /* 0 5px, grows with the text */
 }
 
 /* #endregion */
 
-/* #endregion Hero */
-
-/* #region Promo strip */
+  /* #region Block: promo strip */
 
 .promo {
   background-color: white;
-  padding: 40px 0;
+  padding: 2.5rem 0; /* 40px */
   text-align: center;
 }
 
 .promo__title {
-  font-size: 1.3rem;
-  font-weight: 500;
+  font-size: 2rem;
+  font-weight: 400;
 }
 
 /* #endregion */
 
 /* #endregion Header */
 
-/* #region Sidebar (popular categories, popular brands) */
+/* #region Main */
+main{
+}
 
+.main-title{
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.product__card{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 440px;
+  position: relative;
+  padding: 0 1rem;
+}
+
+.product__card:hover{
+  box-shadow: 1px 1px 10px #666;
+
+}
+
+.product__img{
+  width: 250px;
+  height: 230px;
+  object-fit: contain;
+  padding: 1rem;
+}
+
+.product__title{
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: .8rem;
+}
+
+.product__text{
+  font-size: .8rem;
+}
+
+.product__card-bottom{
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+}
+
+.product__price{
+  display: block;
+  color: rgb(211, 0, 0);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.product__btn{
+  width: 60%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-transform: uppercase;
+  padding: .5rem 1rem;
+  background-color: white;
+
+}
+
+.product__btn:hover{
+  background-color: #eee;
+}
+
+
+
+/* #endregion */
+
+/* #region Aside */
+  /* #region sidebar__block */
 .sidebar {
   padding-top: 2rem;
   border-right: var(--border-section);
-  padding-right: 0;
+  order: -1 ;  
 }
 
 .sidebar__block {
-  padding: 2rem 0;
+  padding: 1rem;
+}
+
+.sidebar__block--bordered{
   border-bottom: var(--border-section);
 }
 
-.sidebar__block:first-child {
-  padding-top: 0;
-}
 
-.sidebar__title {
-  font-size: 1rem;
+.sidebar__block-title {
+  font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
-.sidebar-list__more a {
-  color: var(--color-link-more);
+.sidebar__block-item{
+  margin-bottom: .3rem;
 }
 
+.sidebar__block-link{
+  font-size: 1rem;
+}
+
+.sidebar__block-link--more {
+  color: var(--color-link-more);
+}
 /* #endregion */
 
-/* #region Main content */
+  /* #region sidebar__slider */
+.sidebar__slider{
+  background-color: white;
+}
 
-/* #region Product cards */
-/* TODO */
-/* #endregion */
+.sidebar__slider-img{
+  height: 300px;
+}
+.sidebar__slider-img img{
+  object-fit: cover
+}
 
+.sidebar__slider-title{
+  font-size: .9rem;
+  font-weight: bold;
+  text-align: center; 
+}
+
+.sidebar__slider-text{
+  text-align: center;
+  font-size: .8rem;
+  color: #666;
+}
+
+.sidebar__slider-indicators{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid #ddd;
+  padding: .5rem;
+}
+
+.sidebar__slider-dot {
+    box-sizing: content-box;
+    flex: 0 1 auto;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-muted);
+    border-radius: 50%;
+    margin: .2rem;
+    border: none;
+}
+
+.sidebar__slider-dot.active{
+    background-color: #666;
+}
+  /* #endregion */
+
+  /* #region sidebar__shop-now */
+.sidebar__shop-now{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar__shop-now-text{
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: center;
+}
+
+.sidebar__shop-now--thick{
+  font-size: 1.7rem;
+  font-weight: 700;
+
+}
+
+.shop-now-btn{
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0;
+}
+  /* #endregion */
+
+  /* #region about-store */
+  .about-store__title{
+    font-weight: 700;
+  }
+
+  .about-store__text{
+    color: #666;
+  }
+
+  .about-store__text--colored{
+    color: rgb(2, 154, 160);
+  }
+  /* #endregion */
 /* #endregion */
 
 /* #region Footer */
-/* TODO */
-/* #endregion */
+  /* #region subscribe */
+footer .subscribe{
+  background-color: #f5f5f5;
+  padding: 3rem 0;
+  border-bottom: 1px solid #9e9e9e;
+}
 
-/* #region Responsive */
 
-/* Large devices, wide screens */
-@media only screen and (max-width : 1200px) {}
+footer .subscribe__text h2{
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+footer .subscribe__text h3{
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+footer .subscribe form input{
+  font-size: .9rem;
+}
+
+footer .subscribe form .form-control{
+  padding: 1rem 1rem;
+  height: 3rem;
+}
+
+footer .subscribe .btn{
+  width: 100%;
+  height: 3rem;
+}
+
+footer .subscribe .btn-primary__orange{
+  background-color: #e77553;
+  border-color: #e77553;
+  
+}
+  /* #endregions */
+  
+  /* #region partners */
+  /* #endregions */
+
+  /* #region footer-nav */
+  footer .footer-nav{
+    background-color: #343434;
+  }
+
+  footer .footer-nav h3, footer .footer-nav a{
+    color: #c8c8c8;
+    font-size: .9rem;
+  }
+
+  footer .footer-nav h3{
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  footer .footer-nav a{
+    font-weight: 200;
+  }
+  /* #endregions */
+
+  /* #region rights */
+
+  footer .rights__text{
+    display: flex;
+    align-items: center;
+  }
+  footer .rights__text p{
+    margin-bottom: 0;
+  }
+
+  footer .rights__pay{
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  footer .rights__pay span{
+    margin-right: .3rem;
+  }
+  /* #endregions */
+/* #endregions */
+
+/* #region media */
+@media only screen and (max-width : 1200px) {
+  .sidebar{
+    order: 1;
+  }
+
+}
 
 /* Medium devices, desktops */
-@media only screen and (max-width : 992px) {}
+@media only screen and (max-width : 992px) {
+  .main-nav__logo {
+    width: 36%;
+    top: 0px;
+  }
+
+  .topbar__link {
+    padding: .5rem;
+  }
+
+
+  .main-nav__search .input-group{
+    margin: 0 1.5rem 1rem 1.5rem;
+  }
+}
 
 /* Small devices, tablets */
-@media only screen and (max-width : 768px) {}
+@media only screen and (max-width : 768px) {
+  main .product__card{
+    margin-bottom: 1.5rem;
+  }
+}
 
 /* Extra small devices, phones */
 @media only screen and (max-width : 480px) {
-  .topbar__cart .btn-accent {
+  .topbar__cart-btn {
     width: 100%;
   }
 }
